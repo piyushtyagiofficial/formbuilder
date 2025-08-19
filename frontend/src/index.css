@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+    
+    /* Custom color variables for more vibrant UI */
+    --purple: 262.1 83.3% 57.8%;
+    --purple-light: 262.1 83.3% 85%;
+    --blue: 217.2 91.2% 59.8%;
+    --blue-light: 217.2 91.2% 85%;
+    --green: 142.1 76.2% 36.3%;
+    --green-light: 142.1 76.2% 85%;
+    --orange: 24.6 95% 53.1%;
+    --orange-light: 24.6 95% 85%;
+    --pink: 330.4 81.2% 60.4%;
+    --pink-light: 330.4 81.2% 85%;
+    --cyan: 180.1 84.2% 60.2%;
+    --cyan-light: 180.1 84.2% 85%;
+    --gradient-1: linear-gradient(135deg, hsl(262.1 83.3% 57.8%) 0%, hsl(217.2 91.2% 59.8%) 100%);
+    --gradient-2: linear-gradient(135deg, hsl(142.1 76.2% 36.3%) 0%, hsl(180.1 84.2% 60.2%) 100%);
+    --gradient-3: linear-gradient(135deg, hsl(24.6 95% 53.1%) 0%, hsl(330.4 81.2% 60.4%) 100%);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
+}
+
+/* Custom gradient classes */
+.gradient-purple-blue {
+  background: var(--gradient-1);
+}
+
+.gradient-green-cyan {
+  background: var(--gradient-2);
+}
+
+.gradient-orange-pink {
+  background: var(--gradient-3);
+}
+
+/* Animated gradients */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.drag-preview {
+  transform: rotate(5deg);
+  transition: all 0.2s ease;
+}
+
+.drop-zone {
+  transition: all 0.2s ease;
+}
+
+.drop-zone-active {
+  @apply border-primary border-2 border-dashed bg-primary/5;
+}
