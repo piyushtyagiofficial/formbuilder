@@ -71,9 +71,9 @@ export function Header({ setSidebarOpen }: HeaderProps) {
             <DropdownMenuContent className="w-56 lg:w-64 border-purple-200 shadow-xl shadow-purple-100/50 mt-2" align="end">
               <DropdownMenuLabel className="font-normal p-4">
                 <div className="flex flex-col space-y-2">
-                  <p className="text-base font-medium leading-none text-purple-700">John Doe</p>
+                  <p className="text-base font-medium leading-none text-purple-700">Piyush</p>
                   <p className="text-sm leading-none text-purple-500">
-                    john@example.com
+                    tyagipiyush812@gmail.com
                   </p>
                 </div>
               </DropdownMenuLabel>
