@@ -7,9 +7,9 @@ const Submission = require('../models/Submission');
 const { validateForm, validateSubmission } = require('../middleware/validation');
 const { uploadToCloudinary } = require('../utils/cloudinary');
 
-// Configure multer for file uploads
+// Configure multer for file uploads - using memory storage for Vercel compatibility
 const upload = multer({ 
-  dest: 'uploads/',
+  storage: multer.memoryStorage(), // Use memory storage instead of disk storage
   limits: {
     fileSize: 10 * 1024 * 1024, // 10MB limit
     files: 10 // max 10 files

@@ -5,7 +5,7 @@ const { uploadToCloudinary } = require('../utils/cloudinary');
 
 // Configure multer
 const upload = multer({ 
-  dest: 'uploads/',
+  storage: multer.memoryStorage(),
   limits: {
     fileSize: 10 * 1024 * 1024, // 10MB limit
   },
